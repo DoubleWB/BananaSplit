@@ -6,13 +6,6 @@ import java.util.HashMap;
 import resources.*;
 
 public class Main {
-	
-	private static ArrayList<Person> people = new ArrayList<Person>();
-	private static HashMap<Item, Person> outstandingItems = new HashMap<Item, Person>();
-	
-	public static void on_Finished(Item finished) {
-		people.get(0).split(finished, 0, people, outstandingItems);
-	}
 		
 	public static void main(String[] args) {
 		Person a = new Person(1, "Anthony");
