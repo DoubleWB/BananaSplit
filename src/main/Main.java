@@ -1,10 +1,10 @@
-package main;
+package com.example.bananasplittoon.main;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import resources.*;
-
+import com.example.bananasplittoon.resources.*;
 public class Main {
 		
 	public static void main(String[] args) {

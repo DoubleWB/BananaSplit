@@ -1,8 +1,8 @@
-package resources;
+package com.example.bananasplittoon.resources;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import csp.*;
+import com.example.bananasplittoon.csp.*;
 
 public class Group {
 	private ArrayList<Person> people;
@@ -24,7 +24,6 @@ public class Group {
 		for (Receipt r : this.receipts) {
 			if (r.getOwner().acceptItemBought(r, finished)) {
 				this.split(this.gatherConsumers(finished), finished, r.getOwner());
-				this.purgeReceipts();
 				return;
 			}
 		}
@@ -77,7 +76,7 @@ public class Group {
 	public void removePerson(Person person) {
 		this.people.remove(person);
 	}
-	
+
 	private void purgeReceipts() {
 		for (int i = 0; i < receipts.size(); i ++) {
 			Receipt r = receipts.get(i);
@@ -87,7 +86,6 @@ public class Group {
 			}
 		}
 	}
-	
 	/*// add to HashMap
 	void addtoMap(Item item, Person person) {
 		this.outstandingItems.put(item, person);

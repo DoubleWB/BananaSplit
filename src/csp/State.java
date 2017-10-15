@@ -1,8 +1,8 @@
-package csp;
+package com.example.bananasplittoon.csp;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import resources.*;
+import com.example.bananasplittoon.resources.*;
 
 public class State {
 

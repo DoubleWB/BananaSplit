@@ -1,19 +1,20 @@
-package resources;
+package com.example.bananasplittoon.resources;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
+import android.graphics.Canvas;
+
 import java.util.ArrayList;
+import android.graphics.Paint;
 
 public class Receipt {
 	
 	private Person owner;
-	private BufferedImage image;
+	private Canvas image;
 	private Date boughtOn;
 	private ArrayList<Integer> dividers;
 	private static int fudgeFactor = 1000;
 	private boolean flagged = false;
 	
-	public Receipt(Person owner, BufferedImage i, Date d) {
+	public Receipt(Person owner, Canvas i, Date d) {
 		this.owner = owner;
 		this.image = i;
 		this.boughtOn = d;
@@ -23,15 +24,14 @@ public class Receipt {
 	public Person getOwner() {
 		return this.owner;
 	}
-	
+
 	public void flagForDeletion() {
 		this.flagged = true;
 	}
-	
+
 	public boolean getFlaggedForDeletion() {
 		return this.flagged;
 	}
-	
 	public void addCross(int x, int y) { // Assuming good touch information
 		int top = 0;
 		int bottom = 0;
@@ -41,8 +41,9 @@ public class Receipt {
 				bottom = dividers.get(div);
 			}
 		}
-		Graphics g = image.getGraphics();
-		g.drawRect(0, (bottom - top)/2 + top, image.getWidth(), 2); //Draw a thin line 
+		image = new Canvas();
+		Paint p = new Paint();
+		image.drawRect(0, (bottom - top)/2 + top, image.getWidth(), 2, new Paint()); //Draw a thin line
 	}
 	
 	public void findDividers() {
@@ -50,7 +51,7 @@ public class Receipt {
 		for(int row = 0; row < image.getHeight(); row++) {
 			int rowSum = 0;
 			for(int col = 0; col < image.getWidth(); col++) {
-				rowSum += image.getRGB(col, row);
+				rowSum += 0;
 			}
 			rowSums.add(rowSum);
 		}

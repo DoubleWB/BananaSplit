@@ -1,4 +1,4 @@
-package resources;
+package com.example.bananasplittoon.resources;
 
 import java.util.HashMap;
 
