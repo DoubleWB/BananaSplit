@@ -33,7 +33,7 @@ public class Receipt {
 			}
 		}
 		Graphics g = image.getGraphics();
-		g.drawRect(0, (bottom - top)/2 + top, image.getWidth(), 2); //Draw a thin line on top of the black text 
+		g.drawRect(0, (bottom - top)/2 + top, image.getWidth(), 2); //Draw a thin line 
 	}
 	
 	public void findDividers() {

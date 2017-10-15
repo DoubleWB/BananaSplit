@@ -37,9 +37,6 @@ public class Group {
 			shares.put(p, percentage);
 			satisfactions.put(p, 0);
 		}
-		double globalSatisfaction = 0;
-		int count = 0;
-		//while(globalSatisfaction < 150 && count < 3) {
 		for (Person p : people) {
 			satisfactions.put(p, p.rateSatisfaction(shares.get(p), i));
 		}
@@ -50,7 +47,6 @@ public class Group {
 		for (Person p : shares.keySet()) {
 			p.addDebt(new Debt(owner, shares.get(p)*i.getPrice()));
 		}
-		//}
 	}
 	
 	public double getTotalSatisfaction(HashMap<Person, Double> satisfaction) {
