@@ -24,6 +24,7 @@ public class Group {
 		for (Receipt r : this.receipts) {
 			if (r.getOwner().acceptItemBought(r, finished)) {
 				this.split(this.gatherConsumers(finished), finished, r.getOwner());
+				this.purgeReceipts();
 				return;
 			}
 		}
@@ -75,6 +76,16 @@ public class Group {
 	// remove from arrayList
 	public void removePerson(Person person) {
 		this.people.remove(person);
+	}
+	
+	private void purgeReceipts() {
+		for (int i = 0; i < receipts.size(); i ++) {
+			Receipt r = receipts.get(i);
+			if (r.getFlaggedForDeletion()) {
+				i--;
+				receipts.remove(r);
+			}
+		}
 	}
 	
 	/*// add to HashMap

@@ -11,6 +11,7 @@ public class Receipt {
 	private Date boughtOn;
 	private ArrayList<Integer> dividers;
 	private static int fudgeFactor = 1000;
+	private boolean flagged = false;
 	
 	public Receipt(Person owner, BufferedImage i, Date d) {
 		this.owner = owner;
@@ -21,6 +22,14 @@ public class Receipt {
 	
 	public Person getOwner() {
 		return this.owner;
+	}
+	
+	public void flagForDeletion() {
+		this.flagged = true;
+	}
+	
+	public boolean getFlaggedForDeletion() {
+		return this.flagged;
 	}
 	
 	public void addCross(int x, int y) { // Assuming good touch information
