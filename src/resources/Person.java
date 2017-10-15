@@ -16,7 +16,20 @@ public class Person {
 		this.debts = new ArrayList<Debt>();
 	}
 	
-	public void split(Item i, int index, ArrayList<Person> group, HashMap<Item, Person> items) {
+	public boolean acceptItemBought(Receipt owned, Item finished) {
+		return true;
+	}
+	
+	public boolean optIn(Item i) {
+		return true;
+	}
+	
+	public int rateSatisfaction(int share, Item i) {
+		//100 is perfectly satisfied, 0 is 'I should pay 100% less', 200 is 'I should pay 100% more')
+		return (int)(80.0/100 * share);
+	}
+	
+	/*public void split(Item i, int index, ArrayList<Person> group, HashMap<Item, Person> items) {
 		Person owedTo = items.get(i);
 		Scanner s = new Scanner(System.in);
 		if(s.next().equals("n")) {
@@ -33,11 +46,14 @@ public class Person {
 	
 	public void percentageSplit(Item i, int index, ArrayList<Person> group, HashMap<Item, Person> items) {
 		Scanner s = new Scanner(System.in);
-		
-	}
+	}*/
 	
 	public ArrayList<Debt> getDebts() {
 		return this.debts;
+	}
+	
+	public void addDebt(Debt d) {
+		this.debts.add(d);
 	}
 	
 	public String toString() {

@@ -8,17 +8,22 @@ import resources.*;
 public class Main {
 		
 	public static void main(String[] args) {
-		Person a = new Person(1, "Anthony");
-		people.add(a);
-		people.add(new Person(2, "Kevin"));
-		people.add(new Person(3, "Will"));
-		people.add(new Person(4, "Matteus"));
-		people.add(new Person(5, "Nick"));
-		Item i = new Item("Milk", 5);
-		outstandingItems.put(i, a);
-		on_Finished(i);
-		System.out.println(people.get(1).getDebts().get(0));
-		System.out.println(people.get(0).getDebts().size());
+		Group g = new Group();
+		Person a = new Person(0, "Anthony");
+		Person k = new Person(1, "Kevin");
+		Person m  = new Person(2, "Matteus");
+		Person n  = new Person(3, "Nick");
+		Person w  = new Person(4, "Will");
+		g.addPerson(a);
+		g.addPerson(k);
+		g.addPerson(m);
+		g.addPerson(n);
+		g.addPerson(w);
+		g.addReceipt(new Receipt(a, null, new Date(12, 1)));
+		Item i = new Item(0, "Milk", 5);
+		g.on_Finished(i, a);
+		System.out.println(k.getDebts().get(0));
+		System.out.println(a.getDebts().get(0));
 	}
 
 }
