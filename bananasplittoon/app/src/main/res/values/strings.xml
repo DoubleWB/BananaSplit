@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">bananasplittoon</string>
+    <string name="placeholder">Username</string>
+    <string name="title_activity_receipt_review">ReceiptReviewActivity</string>
+</resources>
